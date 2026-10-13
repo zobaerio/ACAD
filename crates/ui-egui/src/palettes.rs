@@ -1163,6 +1163,7 @@ pub(crate) fn properties_section(app: &mut CadApp, ui: &mut egui::Ui) {
                 });
                 num(ui, "Text height", "height", len(tx.height), &mut set, &mut bad, ids);
                 num(ui, "Defined width", "width", len(tx.width), &mut set, &mut bad, ids);
+                num(ui, "Rotation", "rotation", real(angles.shown(tx.rotation).to_degrees()), &mut set, &mut bad, ids);
             }
             // A multileader's text (#1081): it had no field, so it couldn't be changed.
             EntityKind::MLeader(ml) => {
