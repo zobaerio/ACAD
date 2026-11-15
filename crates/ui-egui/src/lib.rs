@@ -669,7 +669,7 @@ impl CadApp {
                 .filter(|_| !self.session.greek_word_is_a_command(first))
                 .unwrap_or_else(|| first.to_ascii_lowercase());
             if !first.is_empty() && !json_form {
-                if !first.starts_with( ui.) {
+                if !first.starts_with("ui.") {
                     self.cmd.push_history(text);
                 }
                 if menus::run_ui_command(self, &name, &Value::Null).is_some() {
