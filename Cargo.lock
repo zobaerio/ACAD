@@ -825,6 +825,7 @@ dependencies = [
 name = "cadcraft-ui-egui"
 version = "0.21.0"
 dependencies = [
+ "arboard",
  "cadcraft-color",
  "cadcraft-doc",
  "cadcraft-engine",
@@ -833,6 +834,7 @@ dependencies = [
  "cadcraft-io",
  "cadcraft-render",
  "chrono",
+ "clipboard-win",
  "craft-image-codecs 0.1.0 (git+https://github.com/storytold/craft-libs?rev=ae5020c1ed922cf7976a3a5545f05b07f466be12)",
  "craft-ui",
  "craft-update",
