@@ -67,8 +67,16 @@ pub fn viewport_content(d: &Drawing, space: &Space, handle: Handle, area: Bounds
     }
     let opts = &with_point_view(d, space, opts);
     let styler = style_table(d, space, opts, false).map(|t| plotstyle::Styler::new(d, t));
-    let mut b =
-        Builder { list: DisplayList::default(), opts, plotting: false, styles: styler.as_ref(), named: None, shared_budget: None, transparency: 0 };
+    let mut b = Builder {
+        list: DisplayList::default(),
+        opts,
+        plotting: false,
+        styles: styler.as_ref(),
+        named: None,
+        shared_budget: None,
+        shared_dashes: None,
+        transparency: 0,
+    };
     contents(&mut b, d, vp, area, &Clip::Rect(area), paper::unit_mm_of(d, handle));
     b.list
 }
@@ -119,6 +127,7 @@ fn contents(b: &mut Builder, d: &Drawing, vp: &cadcraft_doc::Viewport, area: Bou
         styles: b.styles,
         named: None,
         shared_budget: Some(&budget),
+        shared_dashes: b.shared_dashes,
         transparency: 0,
     };
     #[cfg(not(target_arch = "wasm32"))]
@@ -142,6 +151,7 @@ fn contents(b: &mut Builder, d: &Drawing, vp: &cadcraft_doc::Viewport, area: Bou
                         styles: None,
                         named: None,
                         shared_budget: Some(&budget),
+                        shared_dashes: None,
                         transparency: 0,
                     };
                     let c = ctx();
