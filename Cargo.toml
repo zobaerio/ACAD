@@ -20,6 +20,7 @@ craft-image-codecs = { git = "https://github.com/storytold/craft-libs", rev = "a
 craft-mime = { git = "https://github.com/storytold/craft-libs", rev = "0325b2d73676d736e94097dbcef01219cf25c7db" }
 cadcraft-color = { path = "crates/color" }
 cadcraft-doc = { path = "crates/doc" }
+cadcraft-collab = { path = "crates/collab" }
 cadcraft-constraints = { path = "crates/constraints" }
 cadcraft-fonts = { path = "crates/fonts" }
 cadcraft-render = { path = "crates/render" }
